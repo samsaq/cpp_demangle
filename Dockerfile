@@ -10,8 +10,8 @@ RUN ${HOME}/.cargo/bin/cargo install -f cargo-fuzz
 
 ADD . /cpp_demangle
 WORKDIR /cpp_demangle
-RUN cd fuzz && ${HOME}/.cargo/bin/cargo fuzz build --debug-assertions parse_and_stringify
-RUN cd fuzz && ${HOME}/.cargo/bin/cargo fuzz build --debug-assertions cppfilt_differential
+RUN cd fuzz && ${HOME}/.cargo/bin/cargo fuzz build parse_and_stringify
+RUN cd fuzz && ${HOME}/.cargo/bin/cargo fuzz build cppfilt_differential
 
 FROM ubuntu:20.04
 
